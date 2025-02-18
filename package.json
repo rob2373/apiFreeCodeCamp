@@ -9,7 +9,7 @@
 	},
 	"author": "Roberto Robles Castro",
 	"description": "Aprendiendo la creacion de apis con nodejs",
-	"keywords": ["freeocdecamp"],
+	"keywords": ["freeocdecamp","curse", "apis"],
 	"license": "ISC",
 	"repository": {
 		"type": "git",
