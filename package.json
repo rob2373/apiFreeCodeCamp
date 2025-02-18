@@ -9,11 +9,11 @@
 	},
 	"author": "Roberto Robles Castro",
 	"description": "Aprendiendo la creacion de apis con nodejs",
-	"keywords": ["freeocdecamp","curse", "apis"],
 	"license": "ISC",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/freeCodeCamp/boilerplate-npm.git"
-	}
+	},
+	"keywords": ["freeocdecamp","curse", "apis"]
 
 }
