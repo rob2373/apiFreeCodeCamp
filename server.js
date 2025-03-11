@@ -13,9 +13,17 @@ var app = express();
 app.use('/public', express.static(process.cwd() + '/public'));
 
 app.get("/json", (req, res) => {
+  var respuesta
+  if (process.env.MESSAGE_STYLE ==='uppercase'){
+      respuesta = "Hello json".toUpperCase();
+    
+  }else 
+  {
+    respuesta="Hello json"
+  }
   res.json({
-    message: "Hello json"
-  });
+    message:respuesta
+  })
 });
 
 app.get('/', (req, res) => {
