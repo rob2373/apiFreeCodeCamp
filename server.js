@@ -19,8 +19,7 @@ app.get('/json', (req, res) => {
 });  
   
 
-app.route('/')
-    .get(function(req, res) {
+app.get('/', (req, res) => {
 		  res.sendFile(process.cwd() + '/views/index.html');
     })
 
