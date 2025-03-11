@@ -13,8 +13,13 @@ var app = express();
 
 app.use('/public', express.static(process.cwd() + '/public'));
 
+app.route('/json')
+.get(function(req, res){
+  res.json({
+    "message":"Hello json"
+  })  
+})  
 
-  
 app.route('/')
     .get(function(req, res) {
 		  res.sendFile(process.cwd() + '/views/index.html');
