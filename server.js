@@ -13,11 +13,8 @@ var app = express();
 app.use('/public', express.static(process.cwd() + '/public'));
 
 app.get('/json', (req, res) => {
-  res.json({
-    "message":"Hello json"
-  })  
-});  
-  
+  res.json({ message: "Hello json" }); // Asegúrate de que coincida exactamente
+});
 
 app.get('/', (req, res) => {
 		  res.sendFile(process.cwd() + '/views/index.html');
