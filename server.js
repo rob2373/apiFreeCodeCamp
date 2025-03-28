@@ -8,12 +8,14 @@
 const path = require("path");
 var fs = require('fs');
 var express = require('express');
+const { redirect } = require("express/lib/response");
 var app = express();
-require('dotenv').config({path: path.resolve(__dirname,"../.env")})
+
+require('dotenv').config({path: path.resolve(__dirname,"./.env")})
 
 app.use('/public', express.static(process.cwd() + '/public'));
 
-app.get("/json", (req, res) => {
+app.get("/", (req, res) => {
   var respuesta
   if (process.env.MESSAGE_STYLE=="uppercase"){
       respuesta = "Hello json".toUpperCase();
@@ -27,13 +29,19 @@ app.get("/json", (req, res) => {
   })
 });
 
-app.get('/', (req, res) => {
+/* app.get('/', (req, res) => {
 		  res.sendFile(process.cwd() + '/views/index.html');
     })
-
+ */
 // Respond not found to all the wrong routes
 
-
+//middleware
+app.all(function middleware(req, res, next){
+  var logger = req.method +" " + req.path + "-" + req.ip ; 
+  console.log(logger);
+  next();
+}
+)
 
 // Error Middleware
 
